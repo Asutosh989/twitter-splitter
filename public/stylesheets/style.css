@@ -6,3 +6,12 @@ body {
 a {
   color: #00B7FF;
 }
+
+.btn-default{
+    background-color: #4099FF !important;
+    color: white !important;
+}
+
+.navbar-default{
+  background-color: #4099FF !important;
+}

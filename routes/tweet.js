@@ -7,18 +7,17 @@ router.get('/', function(req, res) {
     var T = new Twit(config);
     var stats = req.query.tweets;
     console.log(stats);
+    var d = stats.match(/.{1,140}/g);
     var doc = {
-      status: stats
+      status: d
     }
-    T.post('statuses/update', doc, tweetStatus);
-
-    function tweetStatus(err, data, response) {
-      if(err){throw(err);}
-      else{
+    for(var i=0;i<doc.status.length;i++){
+	     console.log(doc.status[i]);
+       T.post('statuses/update', {status: doc.status[i]}, function (err, data, response) {
         console.log(data);
-      }
+      });
+    }
     res.render('success');
-  }
 });
 
 module.exports = router;
