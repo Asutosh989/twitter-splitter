@@ -31,9 +31,12 @@ router.get('/auth/twitter', passport.authenticate('twitter'));
 //handle callback after twitter has authenticated the user
 router.get('/auth/twitter/callback',
         passport.authenticate('twitter', {
-            successRedirect : '/',
-            failureRedirect : '/'
-        }));
+            // successRedirect : '/',
+            failureRedirect : '/front'
+        }),
+      (req,res,next)=>{
+        res.redirect('/');
+      });
 
 router.use('/tweet',tweet);
 router.use('/search', search);
