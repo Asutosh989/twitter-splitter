@@ -1,9 +1,7 @@
 # Twitter-Splitter
 Splits long tweets into 140-character blocks.
 
-#### Want to contribute to this project. Check the instructions in CONTRIBUTE.md.
-
-#Setting Up
+## Setting Up
 Do this on the commandline
 ```
 $ npm install
@@ -18,3 +16,5 @@ Then you run the last command
 $ npm start 
 ```
 After its has started Goto localhost:3000 on the Browser
+
+#### Want to contribute to this project. Check the instructions in CONTRIBUTE.md.
