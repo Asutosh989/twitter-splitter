@@ -3,7 +3,10 @@ var path = require('path');
 var favicon = require('static-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
+let session = require('express-session');
 var bodyParser = require('body-parser');
+let passport = require('passport')
+require('./lib/passport')(passport);
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -20,6 +23,13 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(session({ secret: 'twitter-splitter',
+                    saveUninitialized : true,
+                    resave : true    
+})); 
+	app.use(passport.initialize());
+	app.use(passport.session());
 
 app.use('/', routes);
 app.use('/users', users);
