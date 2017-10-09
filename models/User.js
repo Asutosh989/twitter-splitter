@@ -1,13 +1,10 @@
-let mongoose = require('mongoose');
-var Schema = mongoose.Schema;
-
+const mongoose = require('mongoose');
 
 // create User Schema
-var User = new Schema({
+const User = new mongoose.Schema({
   twitter_id: String,
-  username : String,
-  displayName : String
+  username: String,
+  displayName: String,
 });
-
 
 module.exports = mongoose.model('users', User);

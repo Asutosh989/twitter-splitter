@@ -1,23 +1,23 @@
-var express = require('express');
-var Twit = require('twit');
-var config = require('../lib/config');
-var router = express.Router();
+const express = require('express');
+const Twit = require('twit');
+const config = require('../lib/config');
 
-router.get('/', function(req, res) {
-    var T = new Twit(config);
-    var stats = req.query.tweets;
-    console.log(stats);
-    var d = stats.match(/.{1,140}/g);
-    var doc = {
-      status: d
-    }
-    for(var i=0;i<doc.status.length;i++){
-	     console.log(doc.status[i]);
-       T.post('statuses/update', {status: doc.status[i]}, function (err, data, response) {
-        console.log(data);
-      });
-    }
-    res.render('success');
+const router = express.Router();
+
+router.get('/', (req, res) => {
+  const T = new Twit(config);
+  const stats = req.query.tweets;
+  console.log(stats);
+  const d = stats.match(/.{1,140}/g);
+  const doc = {
+    status: d,
+  };
+  doc.status.forEach((status) => {
+    T.post('statuses/update', { status }, (err, data) => {
+      console.log(data);
+    });
+  });
+  res.render('success');
 });
 
 module.exports = router;
