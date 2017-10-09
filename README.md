@@ -35,6 +35,11 @@ $ npm start
 ```
 After it starts, open http://localhost:3000 in the browser to see it in action
 
+#### To lint the project
+
+```
+$ npm run lint
+```
 
 ## Want to contribute to this project? Please check the instructions in CONTRIBUTE.md.
 
