@@ -7,14 +7,14 @@ const router = express.Router();
 
 function ensureAuthenticated(req, res, next) {
   if (req.isAuthenticated()) {
-    next();
-  } else {
-    res.redirect('/front');
+    return next();
   }
+  return res.redirect('/front');
 }
+
 /* GET home page. */
 router.get('/', ensureAuthenticated, (req, res) => {
-  res.render('index', { title: 'Twitter-Splitter' });
+  res.render('index', { title: 'Twitter-Splitter', user: req.user });
 });
 
 // Get Front Page
@@ -29,7 +29,6 @@ router.get('/auth/twitter', passport.authenticate('twitter'));
 router.get(
   '/auth/twitter/callback',
   passport.authenticate('twitter', {
-    // successRedirect : '/',
     failureRedirect: '/front',
   }),
   (req, res) => {
@@ -39,7 +38,6 @@ router.get(
 
 router.use('/tweet', tweet);
 router.use('/search', search);
-
 
 console.log('Its running!!!');
 module.exports = router;

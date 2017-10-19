@@ -13,7 +13,9 @@ $ npm install
 
 The app needs some API keys to be able to post to twitter.
 
-[Click here](https://apps.twitter.com/app/new) to create a new twitter app. After creating the app, you will find the details of your app in the `Keys and Access Token` tab.
+[Click here](https://apps.twitter.com/app/new) to create a new twitter app. 
+Make sure the callback url is set as `http://127.0.0.1:3000/auth/twitter/callback`.
+After creating the app, you will find the details of your app in the `Keys and Access Token` tab.
 
 twitter-splitter stores your settings in a '.env' file. To create your .env file
 
@@ -23,8 +25,6 @@ Open it in your favorite text editor and paste the following contents. Replace t
 ```
 CONSUMER_SECRET=XXXXXXXXXXXXXXXXXXXXXXX
 CONSUMER_KEY=XXXXXXXXXXXXXXXXXXXXXXXXXX
-ACCESS_TOKEN=XXXXXXXXXXXXXXXXXXXXXXXXXX
-ACCESS_TOKEN_SECRET=XXXXXXXXXXXXXXXXXXX
 CALLBACK_URL=XXXXXXXXXXXXXXXXXXXXXXXXX
 ```
 
@@ -41,5 +41,4 @@ After it starts, open http://localhost:3000 in the browser to see it in action
 $ npm run lint
 ```
 
-## Want to contribute to this project? Please check the instructions in CONTRIBUTE.md.
-
+## Want to contribute to this project? Please check the instructions in [CONTRIBUTE.md](./CONTRIBUTE.md).
