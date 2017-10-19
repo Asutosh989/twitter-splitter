@@ -3,9 +3,9 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "nodemon ./bin/www",
-    "start-dev": "nodemon ./bin/www",
-    "lint": "eslint **/*.js"
+    "start": "nodemon ./src/bin/www",
+    "start-dev": "nodemon ./src/bin/www",
+    "lint": "eslint ./src/*.js"
   },
   "dependencies": {
     "body-parser": "~1.0.0",
