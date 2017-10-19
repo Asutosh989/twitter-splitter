@@ -1,6 +1,5 @@
 # How to Create a Pull Request
 
-
   - Click on the fork on the top to fork this repo.
   - Go to your repo where you fork the project.
   - Hit the clone button on your repo of the forked repo and copy the given link.
@@ -18,3 +17,4 @@
 Make sure [git](https://git-scm.com/book/id/v2/Getting-Started-Installing-Git) is installed.
 
 [AKINDE EMMANUEL] (https://github.com/harkindey) contributed.
+[VIMALRAJ SELVAM] (https://github.com/email2vimalraj) contributed.
