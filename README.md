@@ -15,7 +15,14 @@ The app needs some API keys to be able to post to twitter.
 
 [Click here](https://apps.twitter.com/app/new) to create a new twitter app. 
 Make sure the callback url is set as `http://127.0.0.1:3000/auth/twitter/callback`.
-After creating the app, you will find the details of your app in the `Keys and Access Token` tab.
+After creating the app, go to `Keys and Access Token` tab.
+Under `Your Access Token` section, click on `Create my access token` button.
+Refresh the page once to get all the required keys.
+
+Copy values from the following keys:
+
+- Consumer Key (API Key)
+- Consumer Secret (API Secret)
 
 twitter-splitter stores your settings in a '.env' file. To create your .env file
 
