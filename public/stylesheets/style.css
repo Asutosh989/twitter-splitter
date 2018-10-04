@@ -1,15 +1,19 @@
 body {
+  padding: 20px;
+  padding-top: 80px;
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
+  
 }
 
 .btn-default{
     background-color: #4099FF !important;
     color: white !important;
+     margin-right: 10px;
 }
 
 .navbar-default{
